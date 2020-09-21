@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "name": "NOS Teletekst",
+  "description": "NOS Teletekst-pagina's, met o.a. het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen.",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/img/icons/tt_57.png",
+    "112": "/img/icons/tt_114.png"
+  },
+  "developer": {
+    "name": "Henk Klijn Hesselink",
+    "url": "https://github.com/henkkh"
+  },
+  "display": "fullscreen",
+  "fullscreen": "true",
+  "orientation": "portrait-primary",
+  "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to load remote content"
+    }
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "locales": {
+    "nl-NL": {
+      "name": "NOS Teletekst",
+      "subtitle": "Kaios variant van NOS Teletekst",
+      "description": "NOS Teletekst-pagina's, met o.a. het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen."
+    }
+  },
+  "default_locale": "nl-NL"
+}
+
