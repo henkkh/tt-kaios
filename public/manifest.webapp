@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "name": "NOS Teletekst",
+  "description": "Met deze applicatie is het mogelijk om razendsnel toegang te krijgen tot de NOS Teletekst-pagina's, zoals het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen.",
+  "type": "web",
+  "categories": [
+    "entertainment",
+    "social",
+    "sports"
+  ],
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/assets/icons/tt_57.png",
+    "112": "/assets/icons/tt_114.png"
+  },
+  "developer": {
+    "name": "Henk Klijn Hesselink",
+    "url": "https://github.com/henkkh"
+  },
+  "locales": {
+    "nl-NL": {
+      "name": "NOS Teletekst",
+      "subtitle": "Kaios variant van NOS Teletekst",
+      "description": "Met deze applicatie is het mogelijk om razendsnel toegang te krijgen tot de NOS Teletekst-pagina's, zoals het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen."
+    }
+  },
+  "default_locale": "nl-NL"
+}

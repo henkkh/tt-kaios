@@ -2,42 +2,67 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta
-      name="description"
-      content="Web site created using create-react-app"
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta name="theme-color" content="rgb(106, 0, 128)" />
+    <title>NOS teletekst</title>
+    <link rel="stylesheet" href="/tt.css">
   </head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
+
+
+<!-- <div class="vh">
+  
+  <a href="/webtekst#content">Sla de navigatie over</a>
+</div>
+
+<div class="tt-paginatie" id="navigatie">
+        <a href="/webtekst?p=100-01" class="tt-btn nav icon home" tabindex="3"><span></span>Terug naar 100</a>
+
+        <div class="tt-buttonset">
+            <a  href="/webtekst?p=718-1" data-pager="p_prev" class="tt-btn icon first " tabindex="4"><span></span>Vorige pagina</a>
+            <a  data-pager="sp_prev" class="tt-btn icon disabled" tabindex="5"><span></span>Vorige subpagina</a>
+            <a  href="/webtekst?p=720-2" data-pager="sp_next" class="tt-btn icon " tabindex="6"><span></span>Volgende subpagina</a>
+            <a  href="/webtekst?p=721-1" data-pager="p_next" class="tt-btn icon last " tabindex="7"><span></span>Volgende pagina</a>
+        </div>
+
+        <form method="get" action="">
+    <span class="vh">Ga naar:</span>
+
+            <input type="tel" maxlength="3" id="navi" name="p" class="tt-input" tabindex="1" />
+            <input type="submit" id="goto" class="tt-btn" value="Ga" tabindex="2" />
+        </form>
+    </div>
+
+<pre id="content">                     <span class="green"> NOS Teletekst</span><span class="yellow"> <a class="yellow" href="/webtekst?p=720">720</a> </span>
+                                    
+<span class="green bg-green"> </span><span class="blue bg-green"> </span><span class="blue bg-green">   WATERSTANDEN</span><span class="blue bg-green">  rivieren/meren  1/10</span>
+<span class="green bg-green"> </span><span class="blue bg-green">                                      </span>
+<span class="blue bg-blue"> </span><span class="cyan bg-blue">    maandag 21 september 11:30        </span>
+                                    
+<span class="cyan">             7 uur                      </span>
+<span class="cyan"> Lobith     </span><span class="cyan">  <a class="cyan" href="/webtekst?p=725">725</a></span><span class="green">  <a class="green" href="/webtekst?p=724">724</a></span><span class="cyan"> Ramspolbrug </span><span class="green">  -32</span>
+<span class="cyan"> Pannerden  </span><span class="cyan">  <a class="cyan" href="/webtekst?p=691">691</a></span><span class="green">  <a class="green" href="/webtekst?p=692">692</a></span><span class="cyan"> Kadoelen    </span><span class="green">  -36</span>
+<span class="cyan"> Nijmegen   </span><span class="cyan">  <a class="cyan" href="/webtekst?p=508">508</a></span><span class="green">  <a class="green" href="/webtekst?p=506">506</a></span><span class="cyan"> Zwartsl. bu </span><span class="green">  -29</span>
+<span class="cyan"> Tiel Waal  </span><span class="cyan">  <a class="cyan" href="/webtekst?p=246">246</a></span><span class="green">  <a class="green" href="/webtekst?p=247">247</a>                  </span>
+<span class="cyan"> IJsselkop  </span><span class="cyan">  <a class="cyan" href="/webtekst?p=673">673</a></span><span class="green">  <a class="green" href="/webtekst?p=676">676</a></span><span class="cyan"> Kornw.znd-bi</span><span class="green">  -28</span>
+<span class="cyan"> Driel Boven</span><span class="cyan">  <a class="cyan" href="/webtekst?p=674">674</a></span><span class="green">  <a class="green" href="/webtekst?p=676">676</a></span><span class="cyan"> Den Oever-bi</span><span class="green">  -28</span>
+<span class="cyan"> Doesburg   </span><span class="cyan">  <a class="cyan" href="/webtekst?p=439">439</a></span><span class="green">  <a class="green" href="/webtekst?p=439">439</a></span><span class="cyan"> Krabbersg.Z </span><span class="green">  -30</span>
+<span class="cyan"> Zutphen    </span><span class="cyan">  <a class="cyan" href="/webtekst?p=245">245</a></span><span class="green">  <a class="green" href="/webtekst?p=243">243</a></span><span class="cyan"> Houtrib N   </span><span class="green">  -31</span>
+<span class="cyan"> Katerveer  </span><span class="cyan">  -12</span><span class="green">  -13</span><span class="cyan"> Schell.w.br </span><span class="green">  -31</span>
+<span class="cyan"> Kampen     </span><span class="cyan">  -28</span><span class="green">  -31</span><span class="cyan"> Surinamekade</span><span class="green">  -43</span>
+<span class="cyan"> Eijsden    </span><span class="cyan"> 4407</span><span class="green"> 4405                  </span>
+<span class="cyan"> St. Pieter </span><span class="cyan"> 4403</span><span class="green"> 4403</span><span class="cyan"> Maarssen    </span><span class="green">  -41</span>
+<span class="cyan"> Heel ben   </span><span class="cyan"> 1418</span><span class="green"> 1420</span><span class="cyan"> Amerongen bo</span><span class="green">  <a class="green" href="/webtekst?p=608">608</a></span>
+<span class="cyan"> Belfeld ben</span><span class="cyan"> 1116</span><span class="green"> 1116</span><span class="cyan"> Hagestein bo</span><span class="green">  <a class="green" href="/webtekst?p=248">248</a></span>
+<span class="cyan"> Sambeek ben</span><span class="cyan">  <a class="cyan" href="/webtekst?p=796">796</a></span><span class="green">  <a class="green" href="/webtekst?p=796">796</a></span><span class="cyan"> Rak zuid    </span><span class="green">   -5</span>
+<span class="cyan"> Megen      </span><span class="cyan">  <a class="cyan" href="/webtekst?p=491">491</a></span><span class="green">  <a class="green" href="/webtekst?p=491">491</a>                  </span>
+    <span class="green"> www.rijkswaterstaat.nl</span>         
+<span class="red"><a class="red" href="/webtekst?p=721"> volgende   </a></span><span class="green"><a class="green" href="/webtekst?p=101"> nieuws   </a></span><span class="yellow"><a class="yellow" href="/webtekst?p=700"> index   </a></span><span class="cyan"><a class="cyan" href="/webtekst?p=601"> sport   </a></span>
+</pre> -->
