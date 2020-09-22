@@ -1,5 +1,4 @@
 import React from 'react';
-// import './App.css';
 
 const APIURL = "https://teletekst-data.nos.nl/json?p=";
 
@@ -36,8 +35,10 @@ const App: React.FC = () => {
   React.useEffect(
     () => {
   
-      getTeletekstPage(100).then( (pd) => {
-        setPageData(pd );
+      getTeletekstPage(101).then( (pd) => {
+        let tto: TeleTekstObject = pd;
+        tto.content = tto.content.replace(/..xF...;/g,"&nbsp;"); 
+        setPageData( tto);
       }).catch( (err) => {
         console.log( err);
 
