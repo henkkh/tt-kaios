@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-import App from './App';
+import Teletekst from './components/Teletekst';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Teletekst} />
+        <Route path="/#:id" component={Teletekst} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

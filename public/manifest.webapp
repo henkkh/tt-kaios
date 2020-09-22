@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "NOS Teletekst",
-  "description": "Met deze applicatie is het mogelijk om razendsnel toegang te krijgen tot de NOS Teletekst-pagina's, zoals het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen.",
+  "description": "NOS Teletekst-pagina's, met o.a. het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen.",
   "type": "web",
   "categories": [
     "entertainment",
@@ -21,7 +21,7 @@
     "nl-NL": {
       "name": "NOS Teletekst",
       "subtitle": "Kaios variant van NOS Teletekst",
-      "description": "Met deze applicatie is het mogelijk om razendsnel toegang te krijgen tot de NOS Teletekst-pagina's, zoals het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen."
+      "description": "NOS Teletekst-pagina's, met o.a. het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen."
     }
   },
   "default_locale": "nl-NL"
