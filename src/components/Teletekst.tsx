@@ -55,8 +55,11 @@ const Teletekst: React.FC<any> = (props) => {
   
   React.useEffect(
     () => {
-      let pageNumber = props.location.hash ? props.location.hash.substr(1) : 100;
-      displayPage(pageNumber);
+      // let pageNumber = props.location.hash ? props.location.hash.substr(1) : 100;
+      // displayPage(pageNumber);
+      // let pageNumber = props.location.hash ? props.location.hash.substr(1) : 100;
+      console.log(props)
+      displayPage(props['id'] );
 
     }, [props] //run effect when props (pagenumber changes)
   );
