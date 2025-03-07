@@ -1,27 +1,37 @@
 /* BASE */
+@font-face {
+    font-family: 'veramonofont2web2';
+    src: url('assets/fonts/Android_VeraMono.eot?#iefix') format('embedded-opentype'),url('assets/fonts/Android_VeraMono.woff') format('woff'),url('assets/fonts/Android_VeraMono.ttf') format('truetype'),url('assets/fonts/Android_VeraMono.svg#font') format('svg')
+}
+
+
 html { background: #000; }
 
 body {
-	position: relative;
-	background: #000;
-	color: #fff;
-	font-family: Helvetica, Arial, sans-serif;
-	max-width: 320px;
-	margin: 0 auto;
+    position: relative;
+    font-family: "veramonofont2web2";
+    font-size: 1em;
+    color: #fff;
+    width: 25em;
+    margin: 0 auto
 }
 
 pre {
-	/* margin: 1em auto 2em auto; */
-	font-size: 1em;
-	width: 100%;
-	white-space: pre-wrap;
+    margin: 0 auto;
+    font-family: "veramonofont2web2";
+    font-size: 0.6em;
+    white-space: pre-wrap
 }
+
 pre a { text-decoration: none; }
 
 a {
 	color: #fff;
 }
 
+/* div {
+	width: 100%;
+} */
 
 /* LAYOUT */
 

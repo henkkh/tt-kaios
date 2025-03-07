@@ -3,6 +3,33 @@ import React from 'react';
 
 const APIURL = "https://teletekst-data.nos.nl/json?p=";
 
+const notFoundHtml = `<pre id="content" tabindex="10">                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+  Pagina niet gevonden...
+  Ga terug naar de <a class="cyan" href="/?p=100">startpagina</a>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+</pre>
+`;
 
 export interface TeleTekstObject {
   prevPage: string;
@@ -17,8 +44,8 @@ export interface TeleTekstObject {
 }
 
 const getTeletekstPage = async (pageNumber: string) => {
-  const res = await fetch(`${APIURL}${pageNumber}`);
-  return res.json();
+  return await fetch(`${APIURL}${pageNumber}`).then( res => res.json())
+  .catch( reason => ({"content": notFoundHtml }));
 };
 
 
@@ -27,7 +54,7 @@ const getTeletekstPage = async (pageNumber: string) => {
 
 
 
-const Teletekst: React.FC<any> = (props) => {
+const Teletekst: React.FC<any> = () => {
 
   const [pageData, setPageData] = React.useState<TeleTekstObject>({
     prevPage: "",
@@ -44,28 +71,32 @@ const Teletekst: React.FC<any> = (props) => {
   const displayPage = (pageNumber:string) => {
     getTeletekstPage(pageNumber).then((pd) => {
       tto = pd;
-      tto.content = tto.content.replace(/..xF...;/g, "&nbsp;");
+      tto.content = tto.content.replace(/href=\"#/g, "href=\"/?p=");
       setPageData(tto);
+
     }).catch((err) => {
       console.log(err);
     });
   }
 
 
-  
+
+
   React.useEffect(
     () => {
-      // let pageNumber = props.location.hash ? props.location.hash.substr(1) : 100;
-      // displayPage(pageNumber);
-      // let pageNumber = props.location.hash ? props.location.hash.substr(1) : 100;
-      console.log(props)
-      displayPage(props['id'] );
 
-    }, [props] //run effect when props (pagenumber changes)
+    }, [] 
   );
+
+  const params = new URLSearchParams(window.location.search);
+
 
   // Add event listeners
   React.useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search)
+    console.log(queryParams.get("p"));
+    displayPage(queryParams.get("p")?? "100");
+
     let enteredPage = 100;
     const downHandler= ( e:KeyboardEvent ) =>  {
       switch ( e.key) {
