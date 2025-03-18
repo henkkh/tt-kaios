@@ -56,61 +56,47 @@ const getTeletekstPage = async (pageNumber: string) => {
 
 const Teletekst: React.FC<any> = () => {
 
-  const [pageData, setPageData] = React.useState<TeleTekstObject>({
-    prevPage: "",
-    nextPage: "",
-    prevSubPage: "",
-    nextSubPage: "",
-    fastTextLinks: [],
-    content: "loading ... "
-  });
-
+  const [page, setPage] = React.useState<string>("100");
+  
   let tto: TeleTekstObject;
-
-
-  const displayPage = (pageNumber:string) => {
-    getTeletekstPage(pageNumber).then((pd) => {
-      tto = pd;
-      tto.content = tto.content.replace(/href=\"#/g, "href=\"/?p=");
-      setPageData(tto);
-
-    }).catch((err) => {
-      console.log(err);
-    });
-  }
-
-
-
 
   React.useEffect(
     () => {
-
-    }, [] 
+      getTeletekstPage(page).then((pd:TeleTekstObject) => {
+        tto = pd;
+        tto.content = tto.content.replace(/href=\"#/g, "href=\"/?p=");
+        document.getElementById("content")!!.innerHTML = tto.content;
+      }).catch((err) => {
+        console.log(err);
+      });
+  
+    }, [page] 
   );
 
-  const params = new URLSearchParams(window.location.search);
+  // const params = new URLSearchParams(window.location.search);
 
 
   // Add event listeners
   React.useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search)
     console.log(queryParams.get("p"));
-    displayPage(queryParams.get("p")?? "100");
+    const urlPage = queryParams.get("p")?? "100";
 
     let enteredPage = 100;
     const downHandler= ( e:KeyboardEvent ) =>  {
+      console.log( e.key);
       switch ( e.key) {
         case 'ArrowLeft':
-          if ( tto.prevPage) displayPage(tto.prevPage);
+          if ( tto.prevPage) setPage(tto.prevPage);
           return;
         case 'ArrowRight':
-          if ( tto.nextPage) displayPage(tto.nextPage);
+          if ( tto.nextPage) setPage(tto.nextPage);
           return;
         case 'ArrowDown':
-          if ( tto.nextSubPage) displayPage(tto.nextSubPage);
+          if ( tto.nextSubPage) setPage(tto.nextSubPage);
           return;
         case 'ArrowUp':
-          if ( tto.prevSubPage) displayPage(tto.prevSubPage);
+          if ( tto.prevSubPage) setPage(tto.prevSubPage);
           return;
       }
       if ( e.keyCode >= 48 && e.keyCode < 58 ) {
@@ -119,13 +105,20 @@ const Teletekst: React.FC<any> = () => {
         return;
       }
       if ( e.keyCode === 13  ) {
-        displayPage( ""+enteredPage);
+        setPage( ""+enteredPage);
       }
       enteredPage = 0;
     }
     
     window.addEventListener('keydown', downHandler);
+    //    // Check if we are in a client-side environment
+    // if (typeof window !== 'undefined') {
+    //     // Access the anchor using window.location.hash
+    //     const anchor = window.location.hash;
+    //     console.log('Anchor:', anchor);
+    // }
     // Remove event listeners on cleanup
+    setPage(urlPage);
     return () => {
       window.removeEventListener('keydown', downHandler);
     };
@@ -134,9 +127,10 @@ const Teletekst: React.FC<any> = () => {
 
 
 
+  // <pre id="content" dangerouslySetInnerHTML={{ __html: pageData.content }}  />
 
   return (
-    <pre id="content" dangerouslySetInnerHTML={{ __html: pageData.content }}  />
+    <pre id="content" > </pre>
   );
 }
 
