@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
       case 'Enter':
           // Action case press center key
-          if ( enteredPage === 100 ) {
+          if ( enteredPage > 99 ) {
             fetchPage("" + enteredPage);
             enteredPage = 0;
           }

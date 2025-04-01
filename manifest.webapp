@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "NOS Teletekst",
   "description": "NOS Teletekst-pagina's, met o.a. het actuele algemene en financiële nieuws, verkeersinformatie en de sportuitslagen.",
   "launch_path": "/index.html",
